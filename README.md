@@ -227,25 +227,3 @@ Ensuring:
 **DACR License v2.6 — All rights reserved**
 
 ```
-
----
-
-##  Why this version hits harder
-
-- **Badges immediately signal sophistication**
-- Reads like a **serious technical engagement**, not a pitch
-- Uses **visual hierarchy (tables, blocks, mermaid diagram)**
-- Protects your IP cleanly
-- Aligns with your **GitHub Pages / executive brief style**
-
----
-
-##  If you want next level
-
-I can:
-- Build the matching **`index.html` GitHub Pages site (high-end UI)**
-- Add a **hero visual (your DARE chart embedded)**
-- Create a **/output folder structure with executive docs**
-
-That’s how you turn this from a repo into **deal-closing collateral**.
-```
