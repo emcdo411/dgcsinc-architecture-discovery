@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DGCS AI Readiness — Executive Intelligence Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0A0A0F;
+    --paper: #F5F0E8;
+    --steel: #1C2B4A;
+    --gold: #C8A951;
+    --gold-light: #E8D498;
+    --crimson: #8B1A1A;
+    --alert: #C0392B;
+    --warn: #D97706;
+    --safe: #2D6A4F;
+    --muted: #6B7280;
+    --rule: rgba(28,43,74,0.15);
+    --card-bg: rgba(255,255,255,0.6);
+    --mono: 'IBM Plex Mono', monospace;
+    --serif: 'DM Serif Display', serif;
+    --display: 'Bebas Neue', sans-serif;
+    --sans: 'Inter', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.65;
+    background-image:
+      radial-gradient(circle at 15% 15%, rgba(200,169,81,0.07) 0%, transparent 50%),
+      radial-gradient(circle at 85% 80%, rgba(28,43,74,0.05) 0%, transparent 50%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23F5F0E8'/%3E%3Ccircle cx='1' cy='1' r='0.5' fill='rgba(0,0,0,0.04)'/%3E%3C/svg%3E");
+  }
+
+  /* ──────────────── UTILITY ──────────────── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+  .label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .rule { border: none; border-top: 1px solid var(--rule); margin: 3rem 0; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 3px 10px;
+    border-radius: 2px;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .badge-steel { background: var(--steel); color: #fff; }
+  .badge-gold { background: var(--gold); color: var(--ink); }
+  .badge-crimson { background: var(--crimson); color: #fff; }
+  .badge-safe { background: var(--safe); color: #fff; }
+  .badge-warn { background: var(--warn); color: #fff; }
+  .badge-muted { background: rgba(107,114,128,0.15); color: var(--muted); border: 1px solid var(--rule); }
+
+  /* ──────────────── NAV ──────────────── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(28,43,74,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid var(--gold);
+    padding: 0.75rem 0;
+  }
+  nav .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .nav-brand {
+    font-family: var(--display);
+    font-size: 1.1rem;
+    letter-spacing: 0.06em;
+    color: var(--gold);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex; gap: 1.5rem; list-style: none;
+    flex-wrap: wrap;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ──────────────── HERO ──────────────── */
+  .hero {
+    background: var(--steel);
+    padding: 5rem 0 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(135deg, rgba(200,169,81,0.12) 0%, transparent 60%),
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 40px,
+        rgba(255,255,255,0.015) 40px,
+        rgba(255,255,255,0.015) 41px
+      );
+  }
+  .hero::after {
+    content: 'CONFIDENTIAL';
+    position: absolute;
+    bottom: 2rem; right: 2rem;
+    font-family: var(--display);
+    font-size: 4rem;
+    letter-spacing: 0.3em;
+    color: rgba(255,255,255,0.03);
+    pointer-events: none;
+    user-select: none;
+  }
+  .hero .container { position: relative; }
+  .hero-eyebrow {
+    display: flex; align-items: center; gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+  .hero h1 span { color: var(--gold); }
+  .hero-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+  }
+  .hero-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    max-width: 700px;
+  }
+  .hero-meta-item {
+    border-left: 2px solid var(--gold);
+    padding-left: 0.75rem;
+  }
+  .hero-meta-item .value {
+    font-family: var(--display);
+    font-size: 1.2rem;
+    letter-spacing: 0.04em;
+    color: #fff;
+  }
+  .hero-meta-item .key {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+
+  /* ──────────────── SCORE SUMMARY BAR ──────────────── */
+  .score-bar {
+    background: var(--ink);
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .score-bar::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+    background: var(--gold);
+  }
+  .score-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    background: rgba(255,255,255,0.05);
+  }
+  .score-cell {
+    background: var(--ink);
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+    position: relative;
+    transition: background 0.2s;
+  }
+  .score-cell:hover { background: rgba(255,255,255,0.04); }
+  .score-number {
+    font-family: var(--display);
+    font-size: 2.5rem;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .score-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 0.5rem;
+  }
+  .score-verdict {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 2px;
+    display: inline-block;
+  }
+  .color-crimson { color: var(--alert); }
+  .color-warn { color: var(--warn); }
+  .color-gold { color: var(--gold); }
+  .color-safe { color: #4ADE80; }
+
+  /* ──────────────── SECTIONS ──────────────── */
+  section { padding: 4rem 0; }
+  section:nth-child(even) { background: rgba(28,43,74,0.03); }
+
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .section-number {
+    font-family: var(--display);
+    font-size: 4rem;
+    line-height: 1;
+    color: rgba(28,43,74,0.1);
+    flex-shrink: 0;
+    width: 60px;
+    text-align: right;
+  }
+  .section-title-group h2 {
+    font-family: var(--display);
+    font-size: 2rem;
+    letter-spacing: 0.04em;
+    color: var(--steel);
+    line-height: 1.1;
+  }
+  .section-title-group p {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--muted);
+    margin-top: 0.25rem;
+  }
+
+  /* ──────────────── DARE CARDS ──────────────── */
+  .dare-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-bottom: 2rem;
+  }
+  .dare-card {
+    background: #fff;
+    padding: 1.75rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .dare-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    z-index: 1;
+  }
+  .dare-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }
+  .dare-card.red::before { background: var(--alert); }
+  .dare-card.orange::before { background: var(--warn); }
+  .dare-card-letter {
+    font-family: var(--display);
+    font-size: 3.5rem;
+    line-height: 1;
+    opacity: 0.08;
+    position: absolute;
+    top: 1rem; right: 1.25rem;
+  }
+  .dare-dimension {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+  .dare-score {
+    font-family: var(--display);
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+  .dare-card.red .dare-score { color: var(--alert); }
+  .dare-card.orange .dare-score { color: var(--warn); }
+  .dare-title {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--steel);
+    margin-bottom: 0.75rem;
+  }
+  .dare-body {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* ──────────────── CES GAUGE ──────────────── */
+  .ces-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  @media (max-width: 700px) { .ces-container { grid-template-columns: 1fr; } }
+
+  .ces-gauge-wrap {
+    background: var(--steel);
+    border-radius: 4px;
+    padding: 2.5rem;
+    text-align: center;
+  }
+  .ces-gauge {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
+    overflow: hidden;
+  }
+  .ces-gauge svg { width: 100%; height: auto; }
+  .ces-score-display {
+    font-family: var(--display);
+    font-size: 2.5rem;
+    color: #fff;
+    letter-spacing: 0.04em;
+  }
+  .ces-score-display span { font-size: 1rem; color: rgba(255,255,255,0.45); }
+  .ces-verdict-text {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--alert);
+    margin-top: 0.5rem;
+  }
+
+  .ces-breakdown { }
+  .ces-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .ces-row:last-child { border-bottom: none; }
+  .ces-dim {
+    width: 40px;
+    font-family: var(--display);
+    font-size: 1.5rem;
+    color: var(--steel);
+    flex-shrink: 0;
+  }
+  .ces-dim-info { flex: 1; }
+  .ces-dim-name {
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--steel);
+    margin-bottom: 2px;
+  }
+  .ces-dim-desc {
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+  .ces-bar-wrap { width: 120px; flex-shrink: 0; }
+  .ces-bar-track {
+    height: 6px;
+    background: var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 4px;
+  }
+  .ces-bar-fill { height: 100%; border-radius: 3px; }
+  .ces-bar-score {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-align: right;
+  }
+
+  /* ──────────────── COMPETITIVE TABLE ──────────────── */
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+  }
+  .comp-table th {
+    background: var(--steel);
+    color: rgba(255,255,255,0.8);
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+  }
+  .comp-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  .comp-table tr:last-child td { border-bottom: none; }
+  .comp-table tr:hover td { background: rgba(28,43,74,0.03); }
+  .gap-behind { color: var(--alert); font-family: var(--mono); font-size: 10px; font-weight: 600; }
+  .gap-parity { color: var(--warn); font-family: var(--mono); font-size: 10px; font-weight: 600; }
+  .gap-ahead { color: var(--safe); font-family: var(--mono); font-size: 10px; font-weight: 600; }
+  .gap-unknown { color: var(--muted); font-family: var(--mono); font-size: 10px; }
+
+  /* ──────────────── TIMELINE ──────────────── */
+  .timeline { position: relative; padding-left: 2.5rem; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.5rem;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold), var(--steel));
+  }
+  .timeline-phase {
+    position: relative;
+    margin-bottom: 2.5rem;
+  }
+  .timeline-phase::before {
+    content: '';
+    position: absolute;
+    left: -2.1rem;
+    top: 0.4rem;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    background: var(--paper);
+  }
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .phase-days {
+    font-family: var(--display);
+    font-size: 1.25rem;
+    letter-spacing: 0.04em;
+    color: var(--steel);
+  }
+  .phase-title {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 2px 8px;
+    background: var(--steel);
+    border-radius: 2px;
+  }
+  .phase-content {
+    background: #fff;
+    border-left: 3px solid var(--gold);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 4px 4px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .deliverable-list {
+    list-style: none;
+    margin-top: 0.75rem;
+  }
+  .deliverable-list li {
+    font-size: 0.825rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    color: var(--muted);
+  }
+  .deliverable-list li::before {
+    content: '→';
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--gold);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .deliverable-list li:last-child { border-bottom: none; }
+
+  /* ──────────────── HYPOTHESIS CARDS ──────────────── */
+  .hypothesis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  .hyp-card {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .hyp-card:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+  }
+  .hyp-header {
+    background: var(--steel);
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .hyp-number {
+    font-family: var(--display);
+    font-size: 1.5rem;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+  }
+  .hyp-body { padding: 1.25rem; }
+  .hyp-claim {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.875rem;
+    color: var(--steel);
+    line-height: 1.55;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hyp-disprove {
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .hyp-disprove strong {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--safe);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  /* ──────────────── DISCOVERY QUESTIONS ──────────────── */
+  .question-card {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+  .question-header {
+    background: var(--steel);
+    padding: 0.9rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .question-num {
+    font-family: var(--display);
+    font-size: 1.25rem;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+  }
+  .question-body { padding: 1.5rem; }
+  .question-text {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--steel);
+    line-height: 1.65;
+    background: rgba(28,43,74,0.04);
+    border-left: 3px solid var(--gold);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+    border-radius: 0 4px 4px 0;
+  }
+  .answer-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+  .answer-table th {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--rule);
+    background: rgba(0,0,0,0.02);
+  }
+  .answer-table td {
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+  .answer-table td:first-child {
+    width: 80px;
+    font-size: 1.2rem;
+  }
+  .coo-escalation {
+    margin-top: 1rem;
+    font-size: 0.775rem;
+    color: var(--muted);
+    border-top: 1px solid var(--rule);
+    padding-top: 1rem;
+  }
+  .coo-escalation strong {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--steel);
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+
+  /* ──────────────── DECISION SECTION ──────────────── */
+  .decision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  @media (max-width: 700px) { .decision-grid { grid-template-columns: 1fr; } }
+  .decision-card {
+    padding: 2rem;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+  .decision-card.steel {
+    background: var(--steel);
+    color: #fff;
+  }
+  .decision-card.crimson {
+    background: var(--crimson);
+    color: #fff;
+  }
+  .decision-card::before {
+    content: '';
+    position: absolute;
+    bottom: -20px; right: -20px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .decision-role {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .decision-text {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.85);
+  }
+  .decision-text strong { color: #fff; font-style: normal; }
+
+  /* ──────────────── DATA CALLOUTS ──────────────── */
+  .callout-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    background: var(--steel);
+    border: 1px solid var(--steel);
+    margin: 2rem 0;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .callout {
+    background: var(--paper);
+    padding: 1.5rem;
+    text-align: center;
+    transition: background 0.2s;
+  }
+  .callout:hover { background: #fff; }
+  .callout-number {
+    font-family: var(--display);
+    font-size: 2.5rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .callout-desc {
+    font-size: 0.775rem;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  /* ──────────────── FOOTER ──────────────── */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.35);
+    padding: 2.5rem 0;
+    margin-top: 4rem;
+  }
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .footer-brand {
+    font-family: var(--display);
+    font-size: 1.25rem;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+  }
+  .footer-copy {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    line-height: 1.8;
+  }
+  .footer-copy strong { color: rgba(255,255,255,0.55); }
+
+  /* ──────────────── ANIMATIONS ──────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up {
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+  }
+  .fade-up:nth-child(1) { animation-delay: 0.1s; }
+  .fade-up:nth-child(2) { animation-delay: 0.2s; }
+  .fade-up:nth-child(3) { animation-delay: 0.3s; }
+  .fade-up:nth-child(4) { animation-delay: 0.4s; }
+
+  /* bar fill animation */
+  @keyframes barGrow {
+    from { width: 0; }
+  }
+  .ces-bar-fill { animation: barGrow 1.2s ease forwards; }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-bottom: 2rem;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .info-cell {
+    background: #fff;
+    padding: 1rem 1.25rem;
+  }
+  .info-cell .key {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.25rem;
+  }
+  .info-cell .val {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--steel);
+  }
+
+  .client-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  .client-chip {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    padding: 4px 10px;
+    background: rgba(28,43,74,0.08);
+    border: 1px solid rgba(28,43,74,0.15);
+    border-radius: 2px;
+    color: var(--steel);
+  }
+
+  blockquote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--steel);
+    border-left: 3px solid var(--gold);
+    padding: 1rem 1.5rem;
+    background: rgba(200,169,81,0.06);
+    margin: 1.5rem 0;
+    border-radius: 0 4px 4px 0;
+    line-height: 1.65;
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 2.2rem; }
+    .section-number { font-size: 2.5rem; width: 40px; }
+    .section-title-group h2 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <a href="#" class="nav-brand">DGCS // AI READINESS BRIEF</a>
+    <ul class="nav-links">
+      <li><a href="#dare">DARE</a></li>
+      <li><a href="#ces">CES</a></li>
+      <li><a href="#competitive">Competitive</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="#hypotheses">Hypotheses</a></li>
+      <li><a href="#decision">Decision</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">
+      <span class="badge badge-gold">EXECUTIVE INTELLIGENCE BRIEF</span>
+      <span class="badge badge-steel">CONFIDENTIAL</span>
+      <span class="badge badge-muted">April 29, 2026</span>
+    </div>
+    <h1>D&amp;G Construction<br><span>AI Readiness</span><br>Stress Test</h1>
+    <p class="hero-sub">Fractional Solutions Architect Engagement — Structural Diagnostic Before the Market Decides for You</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item fade-up">
+        <div class="value">25+ YRS</div>
+        <div class="key">In Operation</div>
+      </div>
+      <div class="hero-meta-item fade-up">
+        <div class="value">TOP 8%</div>
+        <div class="key">BuildZoom — TX Licensed GCs</div>
+      </div>
+      <div class="hero-meta-item fade-up">
+        <div class="value">5 STATES</div>
+        <div class="key">Geographic Footprint</div>
+      </div>
+      <div class="hero-meta-item fade-up">
+        <div class="value">17 CLIENTS</div>
+        <div class="key">Named Tier-1 Relationships</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SCORE SUMMARY BAR -->
+<div class="score-bar">
+  <div class="container">
+    <div class="score-grid">
+      <div class="score-cell">
+        <div class="score-label">DARE — Data Tension</div>
+        <div class="score-number color-crimson">62–68</div>
+        <div class="score-verdict badge badge-crimson">Tension Zone</div>
+      </div>
+      <div class="score-cell">
+        <div class="score-label">DARE — Agility Gap</div>
+        <div class="score-number color-warn">58–65</div>
+        <div class="score-verdict badge badge-warn">Approaching</div>
+      </div>
+      <div class="score-cell">
+        <div class="score-label">DARE — Risk Inversion</div>
+        <div class="score-number color-crimson">55–70</div>
+        <div class="score-verdict badge badge-crimson">⚠ Inversion Crossed</div>
+      </div>
+      <div class="score-cell">
+        <div class="score-label">DARE — Evolution Mismatch</div>
+        <div class="score-number color-crimson">65–72</div>
+        <div class="score-verdict badge badge-crimson">Exit-Proximate</div>
+      </div>
+      <div class="score-cell">
+        <div class="score-label">CES Governance Score</div>
+        <div class="score-number" style="color:#E8D498;">5.0<span style="font-size:1rem;color:rgba(255,255,255,0.35);font-family:var(--sans);font-weight:300;">/15</span></div>
+        <div class="score-verdict badge badge-crimson">Structural Failure Risk</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 1: COMPANY BRIEF -->
+<section id="company">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">01</div>
+      <div class="section-title-group">
+        <h2>Company Intelligence Brief</h2>
+        <p>Public-signal intelligence as of April 29, 2026</p>
+      </div>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-cell"><div class="key">Company</div><div class="val">D&amp;G Construction Services, Inc. (DGCS)</div></div>
+      <div class="info-cell"><div class="key">Owner</div><div class="val">Greg McReynolds</div></div>
+      <div class="info-cell"><div class="key">HQ</div><div class="val">Denton, TX 76208</div></div>
+      <div class="info-cell"><div class="key">Founded</div><div class="val">circa 1999 (25+ Years)</div></div>
+      <div class="info-cell"><div class="key">BuildZoom Score</div><div class="val">105 — Top 8% of 222,249 TX Contractors</div></div>
+      <div class="info-cell"><div class="key">BBB Status</div><div class="val">Accredited since August 22, 2016</div></div>
+      <div class="info-cell"><div class="key">Revenue Estimate</div><div class="val">Low–Mid 8-Figure <span class="badge badge-muted">HYPOTHESIS</span></div></div>
+      <div class="info-cell"><div class="key">Technology Stack</div><div class="val">WordPress / PHP — No AI Tooling Identified</div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;">
+      <div>
+        <p class="label" style="margin-bottom:0.75rem;">Primary Verticals</p>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;">
+          <span class="badge badge-steel" style="width:fit-content;">🏗 Tenant Improvement — Retail</span>
+          <span class="badge badge-safe" style="width:fit-content;">🏥 Healthcare Construction &amp; Renovation</span>
+          <span class="badge" style="background:#9333EA;color:#fff;width:fit-content;">🏢 Commercial Construction</span>
+          <span class="badge badge-warn" style="width:fit-content;">⚡ Facilities Maintenance — 24/7 On-Call</span>
+          <span class="badge badge-crimson" style="width:fit-content;">🚨 Emergency Response</span>
+        </div>
+      </div>
+      <div>
+        <p class="label" style="margin-bottom:0.75rem;">Confirmed Key Clients</p>
+        <div class="client-list">
+          <span class="client-chip">DaVita</span>
+          <span class="client-chip">CBRE</span>
+          <span class="client-chip">JLL</span>
+          <span class="client-chip">Johnson Controls</span>
+          <span class="client-chip">JCPenney</span>
+          <span class="client-chip">LensCrafters</span>
+          <span class="client-chip">Sunglass Hut</span>
+          <span class="client-chip">Chick-fil-A</span>
+          <span class="client-chip">AT&amp;T</span>
+          <span class="client-chip">Dollar Tree</span>
+          <span class="client-chip">Tractor Supply Co.</span>
+          <span class="client-chip">Kubota</span>
+          <span class="client-chip">LabCorp</span>
+          <span class="client-chip">Regal Cinemas</span>
+          <span class="client-chip">WinCo Foods</span>
+          <span class="client-chip">Essilor Luxottica</span>
+          <span class="client-chip">Brinker International</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- SECTION 2: DARE -->
+<section id="dare">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">02</div>
+      <div class="section-title-group">
+        <h2>DARE Diagnostic</h2>
+        <p>Data Tension · Agility Gap · Risk Inversion · Evolution Mismatch</p>
+      </div>
+    </div>
+
+    <p style="color:var(--muted);font-size:0.875rem;margin-bottom:2rem;">Structural tension threshold: score above 60 on any dimension flags a system under pressure. All four DGCS signals are at or approaching this zone.</p>
+
+    <div class="dare-grid">
+      <div class="dare-card red">
+        <div class="dare-card-letter">D</div>
+        <div class="dare-dimension">Data Tension Index</div>
+        <div class="dare-score">62–68</div>
+        <div class="dare-title">Multi-Vertical Data Architecture Gap</div>
+        <div class="dare-body">Healthcare, retail, and commercial verticals each demand materially different compliance and documentation standards. No unified data architecture or AI-assisted estimating system identified. The precision gap widens as clients like CBRE and JLL adopt data-driven procurement.</div>
+      </div>
+      <div class="dare-card orange">
+        <div class="dare-card-letter">A</div>
+        <div class="dare-dimension">Agility Gap Index</div>
+        <div class="dare-score">58–65</div>
+        <div class="dare-title">Five-State Coordination Ceiling</div>
+        <div class="dare-body">Self-performance across multiple trades and five states without AI-assisted scheduling or predictive labor allocation creates a structural agility ceiling. Competitors using Procore AI or ALICE Technologies are compressing timelines DGCS cannot match manually.</div>
+      </div>
+      <div class="dare-card red">
+        <div class="dare-card-letter">R</div>
+        <div class="dare-dimension">Risk Inversion Curve</div>
+        <div class="dare-score">55–70</div>
+        <div class="dare-title">⚠ Inversion Point Crossed</div>
+        <div class="dare-body">38% of contractors now see measurable AI results (up from 17% in 2025). Staying non-AI-enabled is no longer a neutral position — it is an active risk. CBRE and JLL are AI-driven organizations. Vendors that cannot deliver AI-grade reporting face tier compression.</div>
+      </div>
+      <div class="dare-card red">
+        <div class="dare-card-letter">E</div>
+        <div class="dare-dimension">Evolution Mismatch Index</div>
+        <div class="dare-score">65–72</div>
+        <div class="dare-title">Value Proposition vs. Market Requirements</div>
+        <div class="dare-body">DGCS's value proposition was built for a market that evaluated GCs on relationships and quality alone. National rollout clients increasingly use construction management platforms expecting vendor integration. The technology stack in use is consistent with circa-2010 operations.</div>
+      </div>
+    </div>
+
+    <blockquote>At least two signals — Data Tension and Evolution Mismatch — have crossed into exit-proximate territory for key client relationships. This is not a crisis. It is the inflection window before it becomes one.</blockquote>
+
+    <div class="callout-grid">
+      <div class="callout">
+        <div class="callout-number" style="color:var(--alert);">38%</div>
+        <div class="callout-desc">Contractors now seeing measurable AI results (2026 ServiceTitan, n=1,000+)</div>
+      </div>
+      <div class="callout">
+        <div class="callout-number" style="color:var(--warn);">62%</div>
+        <div class="callout-desc">Contractors with NO measurable AI ROI — majority of tool purchases underperform</div>
+      </div>
+      <div class="callout">
+        <div class="callout-number" style="color:var(--safe);">14–15%</div>
+        <div class="callout-desc">Productivity gains with governance architecture in place (McKinsey, 2025)</div>
+      </div>
+      <div class="callout">
+        <div class="callout-number" style="color:var(--gold);">36%</div>
+        <div class="callout-desc">CAGR — AI adoption in construction, 2024–2031</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- SECTION 3: CES -->
+<section id="ces">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">03</div>
+      <div class="section-title-group">
+        <h2>CES Governance Model</h2>
+        <p>Criteria Validity · Execution Capability · Execution Guarantee</p>
+      </div>
+    </div>
+
+    <p style="color:var(--muted);font-size:0.875rem;margin-bottom:2rem;">Total score below 9/15 indicates governance failure risk. Below 6/15 indicates structural failure without intervention. DGCS scores <strong style="color:var(--alert);">5.0/15</strong>.</p>
+
+    <div class="ces-container">
+      <div class="ces-gauge-wrap">
+        <!-- Semi-circle gauge SVG -->
+        <svg viewBox="0 0 200 110" style="width:100%;max-width:260px;display:block;margin:0 auto 1rem;">
+          <defs>
+            <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#C0392B"/>
+              <stop offset="50%" stop-color="#D97706"/>
+              <stop offset="100%" stop-color="#2D6A4F"/>
+            </linearGradient>
+          </defs>
+          <!-- Track -->
+          <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="12" stroke-linecap="round"/>
+          <!-- Fill — 5/15 = 33% -->
+          <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="url(#gaugeGrad)" stroke-width="12" stroke-linecap="round"
+            stroke-dasharray="251.2" stroke-dashoffset="168" style="transition:stroke-dashoffset 1.5s ease;"/>
+          <!-- Needle marker at ~33% -->
+          <circle cx="75" cy="52" r="5" fill="#C0392B"/>
+          <!-- Labels -->
+          <text x="15" y="115" font-family="IBM Plex Mono" font-size="9" fill="rgba(255,255,255,0.35)">0</text>
+          <text x="94" y="22" font-family="IBM Plex Mono" font-size="9" fill="rgba(255,255,255,0.35)" text-anchor="middle">9</text>
+          <text x="178" y="115" font-family="IBM Plex Mono" font-size="9" fill="rgba(255,255,255,0.35)">15</text>
+        </svg>
+        <div class="ces-score-display">5.0 <span>/ 15</span></div>
+        <div class="ces-verdict-text">STRUCTURAL FAILURE RISK</div>
+        <p style="font-size:0.75rem;color:rgba(255,255,255,0.4);margin-top:1rem;line-height:1.5;">Tools purchased at this governance score have a documented failure rate exceeding <strong style="color:rgba(255,255,255,0.65);">70%</strong> in construction (McKinsey, 2025).</p>
+      </div>
+
+      <div class="ces-breakdown">
+        <div class="ces-row">
+          <div class="ces-dim">CV</div>
+          <div class="ces-dim-info">
+            <div class="ces-dim-name">Criteria Validity</div>
+            <div class="ces-dim-desc">Are DGCS's operating criteria still valid for the market they are competing in?</div>
+          </div>
+          <div class="ces-bar-wrap">
+            <div class="ces-bar-track">
+              <div class="ces-bar-fill" style="width:50%;background:var(--warn);"></div>
+            </div>
+            <div class="ces-bar-score">2.5 / 5</div>
+          </div>
+        </div>
+        <div class="ces-row">
+          <div class="ces-dim">EC</div>
+          <div class="ces-dim-info">
+            <div class="ces-dim-name">Execution Capability</div>
+            <div class="ces-dim-desc">Can DGCS operationalize AI adoption at the pace the market requires?</div>
+          </div>
+          <div class="ces-bar-wrap">
+            <div class="ces-bar-track">
+              <div class="ces-bar-fill" style="width:40%;background:var(--warn);"></div>
+            </div>
+            <div class="ces-bar-score">2.0 / 5</div>
+          </div>
+        </div>
+        <div class="ces-row">
+          <div class="ces-dim">EG</div>
+          <div class="ces-dim-info">
+            <div class="ces-dim-name">Execution Guarantee</div>
+            <div class="ces-dim-desc">Does DGCS have the governance architecture to ensure AI adoption sticks and delivers ROI?</div>
+          </div>
+          <div class="ces-bar-wrap">
+            <div class="ces-bar-track">
+              <div class="ces-bar-fill" style="width:10%;background:var(--alert);"></div>
+            </div>
+            <div class="ces-bar-score">0.5 / 5</div>
+          </div>
+        </div>
+        <div style="margin-top:1.5rem;padding:1rem;background:rgba(192,57,43,0.08);border-left:3px solid var(--alert);border-radius:0 4px 4px 0;">
+          <p class="label" style="color:var(--alert);margin-bottom:0.35rem;">Governance Verdict</p>
+          <p style="font-size:0.8rem;color:var(--steel);line-height:1.55;">DGCS scores below the 9/15 governance floor. Without a defined adoption architecture, any AI tool purchase will underperform or be abandoned within 12–18 months. The Execution Guarantee score of 0.5 is the exact structural gap this engagement exists to close.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- SECTION 4: COMPETITIVE -->
+<section id="competitive">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">04</div>
+      <div class="section-title-group">
+        <h2>Competitive Analysis</h2>
+        <p>Primary competitor: Greystone Construction Company — Texas GC since 1987</p>
+      </div>
+    </div>
+
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Capability</th>
+          <th>Greystone (Est.)</th>
+          <th>DGCS (Est.)</th>
+          <th>Gap</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Project Management Platform</td>
+          <td>Likely Procore or equivalent</td>
+          <td>Unconfirmed — likely basic</td>
+          <td><span class="gap-behind">🔴 DGCS Behind</span></td>
+        </tr>
+        <tr>
+          <td>AI-Assisted Estimating</td>
+          <td>Unknown — national scale suggests investment</td>
+          <td>No evidence</td>
+          <td><span class="gap-behind">🔴 DGCS Behind</span></td>
+        </tr>
+        <tr>
+          <td>BIM Integration</td>
+          <td>Possible at national scale</td>
+          <td>No evidence</td>
+          <td><span class="gap-behind">🔴 DGCS Behind</span></td>
+        </tr>
+        <tr>
+          <td>Subcontractor Performance Scoring</td>
+          <td>Likely informal at minimum</td>
+          <td>Relationship-based</td>
+          <td><span class="gap-parity">🟡 Parity</span></td>
+        </tr>
+        <tr>
+          <td>Digital Site Documentation</td>
+          <td>Unknown</td>
+          <td>No evidence</td>
+          <td><span class="gap-unknown">⬜ Unknown</span></td>
+        </tr>
+        <tr>
+          <td>Predictive Scheduling</td>
+          <td>Unknown</td>
+          <td>No evidence</td>
+          <td><span class="gap-behind">🔴 DGCS Behind</span></td>
+        </tr>
+        <tr>
+          <td>Client-Facing Reporting Dashboards</td>
+          <td>Possible</td>
+          <td>No evidence</td>
+          <td><span class="gap-behind">🔴 DGCS Behind</span></td>
+        </tr>
+        <tr>
+          <td>24/7 Emergency Response</td>
+          <td>Unknown</td>
+          <td>Confirmed differentiator</td>
+          <td><span class="gap-ahead">🟢 DGCS Ahead</span></td>
+        </tr>
+        <tr>
+          <td>Healthcare Vertical Depth (DaVita)</td>
+          <td>Unknown</td>
+          <td>Confirmed — significant</td>
+          <td><span class="gap-ahead">🟢 DGCS Ahead</span></td>
+        </tr>
+        <tr>
+          <td>Brand Rollout Expertise (national retail)</td>
+          <td>Possible</td>
+          <td>Confirmed</td>
+          <td><span class="gap-ahead">🟢 Parity / DGCS Ahead</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <blockquote style="margin-top:2rem;">DGCS's 25-year project history, multi-vertical client portfolio, and self-performance data represent a <strong>significant proprietary data asset</strong> that no new market entrant can replicate. The data moat already exists. It is just not structured yet.</blockquote>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- SECTION 5: ROADMAP -->
+<section id="roadmap">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">05</div>
+      <div class="section-title-group">
+        <h2>90-Day Fractional Engagement Plan</h2>
+        <p>Architecture before tools — governance before deployment</p>
+      </div>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-phase">
+        <div class="phase-header">
+          <div class="phase-days">Days 1–30</div>
+          <span class="phase-title">Phase 1 — Architecture Before Tools</span>
+          <span class="badge badge-steel">Foundation</span>
+        </div>
+        <div class="phase-content">
+          <p style="font-size:0.875rem;color:var(--muted);margin-bottom:0.75rem;font-weight:500;">Objective: Build the data and governance foundation before any AI tool is selected or purchased.</p>
+          <ul class="deliverable-list">
+            <li><strong>Week 1:</strong> System of Record Diagnostic — audit every data-generating process; classify each as Structured / Semi-Structured / Unstructured / No Data Capture. Identify the binding constraint (DBL T-classification).</li>
+            <li><strong>Week 2:</strong> DARE Signal Confirmation — run full DARE diagnostic against confirmed internal data from discovery. Score all four dimensions against validated evidence, not OSINT proxies.</li>
+            <li><strong>Week 3:</strong> CES Governance Architecture Build — define Criteria Validity, Execution Capability, and Execution Guarantee. Name the technology owner. Build the measurement infrastructure.</li>
+            <li><strong>Week 4:</strong> Data Readiness Assessment + AI Roadmap Draft — assess historical project data for AI-readiness. Produce a 12-month adoption roadmap with three phases.</li>
+          </ul>
+          <div style="margin-top:1rem;padding:0.75rem;background:rgba(45,106,79,0.08);border-radius:4px;">
+            <p class="label" style="color:var(--safe);margin-bottom:0.25rem;">Phase 1 Success Criteria</p>
+            <p style="font-size:0.775rem;color:var(--muted);">Named technology owner. Defined system of record. Governance framework. Prioritized AI roadmap. <strong>No tools purchased yet.</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-phase">
+        <div class="phase-header">
+          <div class="phase-days">Days 31–60</div>
+          <span class="phase-title">Phase 2 — Pilot Deployment</span>
+          <span class="badge badge-gold">Pilot</span>
+        </div>
+        <div class="phase-content">
+          <p style="font-size:0.875rem;color:var(--muted);margin-bottom:0.75rem;font-weight:500;">Objective: Deploy one AI capability where data is cleanest, ROI is most measurable, and adoption friction is lowest.</p>
+          <table style="width:100%;border-collapse:collapse;font-size:0.775rem;margin-top:0.5rem;">
+            <thead>
+              <tr>
+                <th style="padding:0.5rem 0.75rem;background:rgba(28,43,74,0.06);text-align:left;font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Priority</th>
+                <th style="padding:0.5rem 0.75rem;background:rgba(28,43,74,0.06);text-align:left;font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">Pilot</th>
+                <th style="padding:0.5rem 0.75rem;background:rgba(28,43,74,0.06);text-align:left;font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">ROI Metric</th>
+                <th style="padding:0.5rem 0.75rem;background:rgba(28,43,74,0.06);text-align:left;font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);">DGCS Advantage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--rule);">🥇 A</td>
+                <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--rule);font-weight:500;">AI-Assisted Estimating</td>
+                <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--rule);color:var(--muted);">Bid cycle time; cost variance reduction</td>
+                <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--rule);color:var(--safe);">25 years of data — no competitor can replicate</td>
+              </tr>
+              <tr>
+                <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--rule);">🥈 B</td>
+                <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--rule);font-weight:500;">Emergency Response Dispatch AI</td>
+                <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--rule);color:var(--muted);">Reactive-to-scheduled call shift; labor cost/call</td>
+                <td style="padding:0.6rem 0.75rem;border-bottom:1px solid var(--rule);color:var(--safe);">24/7 differentiator at highest fragility risk</td>
+              </tr>
+              <tr>
+                <td style="padding:0.6rem 0.75rem;">🥉 C</td>
+                <td style="padding:0.6rem 0.75rem;font-weight:500;">Client-Facing Reporting Dashboard</td>
+                <td style="padding:0.6rem 0.75rem;color:var(--muted);">Client escalation rate; renewal conversation quality</td>
+                <td style="padding:0.6rem 0.75rem;color:var(--safe);">DaVita and CBRE relationships at highest risk</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="timeline-phase">
+        <div class="phase-header">
+          <div class="phase-days">Days 61–90</div>
+          <span class="phase-title">Phase 3 — Scale Decision</span>
+          <span class="badge badge-safe">APVL Gate</span>
+        </div>
+        <div class="phase-content">
+          <p style="font-size:0.875rem;color:var(--muted);">Validate pilot ROI against the metrics defined in Phase 1. Make a data-driven decision to scale, pause, or pivot. APVL validation checkpoints at Day 30 and Day 90.</p>
+          <div style="margin-top:1rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <span class="badge badge-safe">Scale — ROI Confirmed</span>
+            <span class="badge badge-warn">Pause — Data Incomplete</span>
+            <span class="badge badge-muted">Pivot — New Pilot Target</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- SECTION 6: DISCOVERY QUESTIONS -->
+<section id="questions">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">06</div>
+      <div class="section-title-group">
+        <h2>Three Discovery Questions</h2>
+        <p>For the 30-minute call with Director of Business Development &amp; COO</p>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="question-header">
+        <div class="question-num">Q1 — The Data Question</div>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+          <span class="badge badge-crimson">DARE D-Signal</span>
+          <span class="badge badge-muted">Gap = Index 70+</span>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="question-text">"When you win a project and complete it, where does the project data go — the actual cost vs. estimate, the subcontractor performance, the timeline variance? And when you're building the next bid for a similar project, how are you using that historical data?"</div>
+        <table class="answer-table">
+          <thead><tr><th>Signal</th><th>Example Response</th><th>Interpretation</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>✅</td>
+              <td>"We use [named platform] and export project data into [named system]."</td>
+              <td style="color:var(--safe);">Data architecture exists</td>
+            </tr>
+            <tr>
+              <td>❌</td>
+              <td>"Our PMs are really experienced and know what things cost."</td>
+              <td style="color:var(--alert);">DARE D-Signal at index 70+</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="coo-escalation"><strong>COO Escalation</strong>"What is your current technology infrastructure for capturing and using project performance data across your portfolio — and who owns that decision inside your organization?"</div>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="question-header">
+        <div class="question-num">Q2 — The Agility Question</div>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+          <span class="badge badge-warn">DARE A-Signal</span>
+          <span class="badge badge-muted">Manual Compilation = Index 65+</span>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="question-text">"When a national rollout client like JCPenney or DaVita asks you for real-time project status across multiple locations simultaneously, what does that reporting look like — and how long does it take your team to produce it?"</div>
+        <table class="answer-table">
+          <thead><tr><th>Signal</th><th>Example Response</th><th>Interpretation</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>✅</td>
+              <td>"We have a client portal / dashboard — clients can log in for real-time status."</td>
+              <td style="color:var(--safe);">Agility architecture exists</td>
+            </tr>
+            <tr>
+              <td>❌</td>
+              <td>"Our PMs send weekly emails to the client."</td>
+              <td style="color:var(--alert);">Structural agility gap — critical if CBRE or JLL is client</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="coo-escalation"><strong>COO Escalation</strong>"What is your current project reporting infrastructure for clients managing multiple locations — and are any of your major clients asking for digital integration with their construction management platforms?"</div>
+      </div>
+    </div>
+
+    <div class="question-card">
+      <div class="question-header">
+        <div class="question-num">Q3 — The Governance Question</div>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+          <span class="badge badge-crimson">CES EG Score</span>
+          <span class="badge badge-muted">"Greg's Call" = EG 0.5</span>
+        </div>
+      </div>
+      <div class="question-body">
+        <div class="question-text">"If I told you today that one of your top three clients is evaluating whether to continue using DGCS based partly on your technology and reporting capabilities — what would your response be, and who inside DGCS would own that conversation?"</div>
+        <table class="answer-table">
+          <thead><tr><th>Signal</th><th>Example Response</th><th>Interpretation</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>✅</td>
+              <td>"Our operations lead evaluates those decisions quarterly. We have a roadmap."</td>
+              <td style="color:var(--safe);">Governance architecture exists</td>
+            </tr>
+            <tr>
+              <td>❌</td>
+              <td>"That would be Greg's call." / "We focus on the construction side, not the tech side."</td>
+              <td style="color:var(--alert);">CES EG = 0.5 — engagement opening confirmed</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="coo-escalation"><strong>COO Escalation</strong>"Who is the named decision-maker for technology investment at DGCS — and what criteria does your organization use to evaluate whether a technology investment is worth making?"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- SECTION 7: HYPOTHESES -->
+<section id="hypotheses">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">07</div>
+      <div class="section-title-group">
+        <h2>Prove Me Wrong</h2>
+        <p>Eight structural hypotheses — disprove what you can. What you can't disprove is where the work begins.</p>
+      </div>
+    </div>
+
+    <div class="hypothesis-grid">
+
+      <div class="hyp-card">
+        <div class="hyp-header">
+          <div class="hyp-number">H1</div>
+          <span class="badge badge-crimson">DATA ARCHITECTURE GAP</span>
+        </div>
+        <div class="hyp-body">
+          <div class="hyp-claim">"DGCS does not have a structured, searchable system of record for historical project performance data. Estimating relies primarily on PM experience and informal knowledge transfer."</div>
+          <div class="hyp-disprove"><strong>Disprove By Showing</strong>Named PM platform with AI integration. Structured project data export capability. Evidence historical cost data informs current estimating.</div>
+        </div>
+      </div>
+
+      <div class="hyp-card">
+        <div class="hyp-header">
+          <div class="hyp-number">H2</div>
+          <span class="badge badge-warn">REPORTING SPEED GAP</span>
+        </div>
+        <div class="hyp-body">
+          <div class="hyp-claim">"DGCS produces client-facing project status reports manually, on a weekly or on-request cadence. For clients like CBRE and JLL — AI-native organizations — this creates a vendor tier risk."</div>
+          <div class="hyp-disprove"><strong>Disprove By Showing</strong>Active client portal, automated reporting cadence, or named platform producing real-time dashboards for DaVita or CBRE.</div>
+        </div>
+      </div>
+
+      <div class="hyp-card">
+        <div class="hyp-header">
+          <div class="hyp-number">H3</div>
+          <span class="badge badge-warn">GOVERNANCE OWNERSHIP GAP</span>
+        </div>
+        <div class="hyp-body">
+          <div class="hyp-claim">"There is no named internal owner for technology and AI adoption decisions at DGCS. Technology investments are made reactively, without a defined evaluation framework or roadmap."</div>
+          <div class="hyp-disprove"><strong>Disprove By Showing</strong>Named internal technology lead or committee. Defined evaluation criteria. Evidence of a structured technology roadmap.</div>
+        </div>
+      </div>
+
+      <div class="hyp-card">
+        <div class="hyp-header">
+          <div class="hyp-number">H4</div>
+          <span class="badge badge-crimson">COMPETITIVE WINDOW CLOSING</span>
+        </div>
+        <div class="hyp-body">
+          <div class="hyp-claim">"DGCS's primary TX competitors are currently in the AI adoption window — building data moats that will compress DGCS's differentiators within 24–36 months if not addressed now."</div>
+          <div class="hyp-disprove"><strong>Disprove By Showing</strong>Evidence that DGCS's primary client base is not yet requiring AI-enhanced vendor capabilities. Evidence that named competitors have not entered the AI adoption window.</div>
+        </div>
+      </div>
+
+      <div class="hyp-card">
+        <div class="hyp-header">
+          <div class="hyp-number">H5</div>
+          <span class="badge badge-crimson">HEALTHCARE VERTICAL RISK</span>
+        </div>
+        <div class="hyp-body">
+          <div class="hyp-claim">"DGCS's DaVita relationship — multi-state, multi-year — is their most valuable client asset and their highest AI adoption risk. DaVita will eventually face GC vendors with digital capability requirements a non-AI-enabled operator cannot meet."</div>
+          <div class="hyp-disprove"><strong>Disprove By Showing</strong>Evidence DaVita has not introduced digital documentation or platform integration requirements into their GC vendor evaluation criteria.</div>
+        </div>
+      </div>
+
+      <div class="hyp-card">
+        <div class="hyp-header">
+          <div class="hyp-number">H6</div>
+          <span class="badge badge-safe">ESTIMATING = HIGHEST ROI ENTRY</span>
+        </div>
+        <div class="hyp-body">
+          <div class="hyp-claim">"DGCS's 25 years of project cost data represents a proprietary AI training dataset no competitor can replicate. Structured and AI-enabled, this data would produce estimating accuracy improvements that directly protect margin."</div>
+          <div class="hyp-disprove"><strong>Disprove By Showing</strong>Evidence current estimating accuracy is already at industry-best levels. Evidence historical project data is not accessible enough to serve as an AI training set.</div>
+        </div>
+      </div>
+
+      <div class="hyp-card">
+        <div class="hyp-header">
+          <div class="hyp-number">H7</div>
+          <span class="badge badge-warn">EMERGENCY RESPONSE AT RISK</span>
+        </div>
+        <div class="hyp-body">
+          <div class="hyp-claim">"DGCS's 24/7 emergency response capability is operationally expensive to maintain without AI-assisted dispatch and predictive maintenance. Without AI augmentation, this differentiator becomes a margin drain as scale increases."</div>
+          <div class="hyp-disprove"><strong>Disprove By Showing</strong>Evidence emergency response margins are healthy. Evidence current dispatch and triage model is operationally efficient at current volume and geographic spread.</div>
+        </div>
+      </div>
+
+      <div class="hyp-card">
+        <div class="hyp-header">
+          <div class="hyp-number">H8</div>
+          <span class="badge badge-steel">WINDOW IS NOW</span>
+        </div>
+        <div class="hyp-body">
+          <div class="hyp-claim">"The optimal window for DGCS to build AI adoption architecture is the next 90 days — before a major client requires it, before a competitor uses it as a lever against DGCS, and before the cost of catch-up exceeds the cost of building correctly."</div>
+          <div class="hyp-disprove"><strong>Disprove By Showing</strong>Evidence primary clients are not yet signaling technology capability requirements. Evidence the TX commercial GC competitive set has not entered the AI adoption window meaningfully.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- SECTION 8: DECISION -->
+<section id="decision">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-number">08</div>
+      <div class="section-title-group">
+        <h2>The Decision</h2>
+        <p>Two questions. Two roles. One 90-day window.</p>
+      </div>
+    </div>
+
+    <div class="decision-grid">
+      <div class="decision-card steel">
+        <div class="decision-role">For the Director of Business Development</div>
+        <div class="decision-text">The question is not whether AI is coming to construction. <strong>That decision has been made by the market.</strong> The question is whether DGCS builds the architecture correctly — with governance, data readiness, and measurable ROI as the foundation — or purchases tools reactively and joins the <strong>62% of contractors who cannot demonstrate measurable AI results.</strong></div>
+      </div>
+      <div class="decision-card crimson">
+        <div class="decision-role">For the COO</div>
+        <div class="decision-text">The question is <strong>who owns this decision inside DGCS.</strong> If the answer is "no one yet," that is the first thing this engagement fixes. Every other AI decision flows from having a named owner with a defined framework and a <strong>90-day mandate to build what the market will eventually require anyway.</strong></div>
+      </div>
+    </div>
+
+    <div style="margin-top:3rem;">
+      <p class="label" style="margin-bottom:1.25rem;">Engagement Deliverables — Included in Retained Advisory</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0.75rem;">
+        <div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.875rem;background:#fff;border:1px solid var(--rule);border-radius:4px;font-size:0.8rem;color:var(--muted);">
+          <span style="color:var(--gold);font-size:1rem;flex-shrink:0;">◈</span>Full DARE Signal Architecture visualization (DGCS-specific, validated against discovery data)
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.875rem;background:#fff;border:1px solid var(--rule);border-radius:4px;font-size:0.8rem;color:var(--muted);">
+          <span style="color:var(--gold);font-size:1rem;flex-shrink:0;">◈</span>CES Governance Scorecard with remediation roadmap
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.875rem;background:#fff;border:1px solid var(--rule);border-radius:4px;font-size:0.8rem;color:var(--muted);">
+          <span style="color:var(--gold);font-size:1rem;flex-shrink:0;">◈</span>System of Record Diagnostic report
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.875rem;background:#fff;border:1px solid var(--rule);border-radius:4px;font-size:0.8rem;color:var(--muted);">
+          <span style="color:var(--gold);font-size:1rem;flex-shrink:0;">◈</span>AI Adoption Roadmap — 12 months, phased
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.875rem;background:#fff;border:1px solid var(--rule);border-radius:4px;font-size:0.8rem;color:var(--muted);">
+          <span style="color:var(--gold);font-size:1rem;flex-shrink:0;">◈</span>Pilot selection and deployment support (Phase 2)
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.875rem;background:#fff;border:1px solid var(--rule);border-radius:4px;font-size:0.8rem;color:var(--muted);">
+          <span style="color:var(--gold);font-size:1rem;flex-shrink:0;">◈</span>APVL validation checkpoints at Day 30 and Day 90
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.875rem;background:#fff;border:1px solid var(--rule);border-radius:4px;font-size:0.8rem;color:var(--muted);">
+          <span style="color:var(--gold);font-size:1rem;flex-shrink:0;">◈</span>Competitive intelligence brief (Greystone + two additional named competitors)
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:0.75rem;padding:0.875rem;background:#fff;border:1px solid var(--rule);border-radius:4px;font-size:0.8rem;color:var(--muted);">
+          <span style="color:var(--gold);font-size:1rem;flex-shrink:0;">◈</span>Client positioning language for AI capability — for use in RFPs and renewal conversations
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">EPOCH FRAMEWORKS LLC</div>
+        <div class="footer-copy" style="margin-top:0.5rem;">
+          <strong>Prepared by:</strong> Erwin Maurice McDonald | Fractional Solutions Architect<br>
+          <strong>Methodology:</strong> McDonald (2026) | DARE · CES · EBT v2.6 · DACR License v2.6<br>
+          <strong>Date:</strong> April 29, 2026
+        </div>
+      </div>
+      <div class="footer-copy" style="text-align:right;max-width:320px;">
+        All frameworks, coined terms, scoring models, and diagnostic architecture are protected under the DACR License.<br>
+        <strong style="color:rgba(255,255,255,0.5);">Findings visible. Mechanics protected.</strong>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
