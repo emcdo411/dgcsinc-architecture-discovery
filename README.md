@@ -27,6 +27,7 @@ Decision Architecture · Governance Diagnostics · AI Adoption Context
 - [Scope Boundaries](#scope-boundaries)
 - [Intended Outcome](#intended-outcome)
 - [Guiding Principle](#guiding-principle)
+- [DACR License — Data, Analysis, and Context Rights](#dacr-license)
 - [Attribution](#attribution)
 
 ---
@@ -66,8 +67,7 @@ The underlying:
 - signal weighting  
 - architectural design methods  
 
-are proprietary to **Epoch Frameworks LLC**  
-and governed under **DACR License v2.6**.
+are proprietary to **Epoch Frameworks LLC** and governed under **DACR License v2.6**.
 
 ---
 
@@ -246,6 +246,55 @@ Clarity before capital is deployed
 
 > Decisions that are not clearly owned, triggered, and verified
 > do not consistently produce outcomes.
+
+---
+
+<a id="dacr-license"></a>
+
+## DACR License — Data, Analysis, and Context Rights
+
+![License](https://img.shields.io/badge/License-DACR%20v2.6-black?style=flat-square)
+![Scope](https://img.shields.io/badge/Scope-Presentation%20Layer%20Only-informational?style=flat-square)
+![Data](https://img.shields.io/badge/Data-Public%20%2B%20Inferred-lightgrey?style=flat-square)
+
+This repository operates under the **DACR License v2.6**.
+
+### Data Sources
+
+* public information
+* industry benchmarks
+* inferred operational patterns
+
+### What Is Visible
+
+* findings
+* observations
+* conclusions
+
+### What Is Protected
+
+* DARE / CES frameworks
+* scoring logic
+* signal models
+* decision architecture methods
+
+### Permitted Use
+
+* internal reference
+* learning
+* discussion
+
+### Restricted Use
+
+* replication
+* commercialization
+* reverse engineering
+
+### Attribution Required
+
+```
+McDonald (2026) · Epoch Frameworks LLC · DACR License v2.6
+```
 
 ---
 
