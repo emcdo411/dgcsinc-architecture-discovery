@@ -8,7 +8,7 @@
 
 ## GOVERNING RULE FOR TONIGHT
 
-You are not Erwin the consultant tonight. You are Erwin from the Stockyards.
+You are not Maurice the consultant tonight. You are Moe from the Stockyards.
 
 The second this feels like business, you lose the relationship capital that got you the call in the first place. Every response below is written for a bar -- not a boardroom. Keep it under 60 seconds total. Plant the flag. Walk away clean.
 
@@ -73,7 +73,7 @@ You validate his instinct, remove the complexity objection before it calculates,
 ### OBJECTION 2 -- "I'm wondering if you should be talking to someone else here"
 
 **What he is actually saying:**
-One of two things. Either he genuinely does not see himself as the decision-maker for this type of engagement -- or he is softly redirecting because he is not yet sold enough to sponsor you internally. This is the most important objection to read correctly.
+One of two things. Either he genuinely does not see himself as the decision-maker for this type of engagement -- or he is softly redirecting because he is not yet sold enough to sponsor Moe internally. This is the most important objection to read correctly.
 
 **How to read the room:**
 If he says this with energy and names someone -- he is helping you. If he says it with a slight lean back and no name -- he is redirecting.
@@ -193,6 +193,6 @@ Capacity objection. Not a no -- a not now. Common in construction BD where opera
 ---
 
 *DGCS Stockyards Encounter Playbook v1.0*
-*Erwin Maurice McDonald -- Behavioral Intelligence Research | Epoch Frameworks LLC*
+*Erwin Maurice McDonald (Maurice / Moe) -- Behavioral Intelligence Research | Epoch Frameworks LLC*
 *Integrates: MOC v4.9 ASIL + CGM + PIL + OAL | DGCS Momentum Strike Prompt v1.0*
 *DACR License v2.6 | May 1, 2026*
