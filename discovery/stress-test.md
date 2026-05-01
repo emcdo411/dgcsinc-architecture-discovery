@@ -12,10 +12,10 @@
 [![Date](https://img.shields.io/badge/Assessment%20Date-April%2029%2C%202026-2D6A4F?style=for-the-badge&logo=calendar&logoColor=white)](#)
 
 <!-- SCORING BADGES -->
-[![DARE Composite](https://img.shields.io/badge/DARE%20Composite-TENSION%20ZONE-E63946?style=for-the-badge&logo=alertcircle&logoColor=white)](#dare-diagnostic)
-[![CES Score](https://img.shields.io/badge/CES%20Score-5.0%20%2F%2015-FF6B35?style=for-the-badge&logo=shield&logoColor=white)](#ces-failure-model)
+[![DARE Composite](https://img.shields.io/badge/DARE%20Composite-TENSION%20ZONE-E63946?style=for-the-badge&logo=alertcircle&logoColor=white)](#section-2-dare-diagnostic)
+[![CES Score](https://img.shields.io/badge/CES%20Score-5.0%20%2F%2015-FF6B35?style=for-the-badge&logo=shield&logoColor=white)](#section-3-ces-failure-model)
 [![Governance Risk](https://img.shields.io/badge/Governance%20Risk-STRUCTURAL%20FAILURE%20RISK-DC2626?style=for-the-badge&logo=alerttriangle&logoColor=white)](#governance-verdict)
-[![Engagement Window](https://img.shields.io/badge/Engagement%20Window-NOW%20%E2%80%94%2090%20Days-16213E?style=for-the-badge&logo=clock&logoColor=gold)](#engagement-parameters)
+[![Engagement Window](https://img.shields.io/badge/Engagement%20Window-NOW%20%E2%80%94%2090%20Days-16213E?style=for-the-badge&logo=clock&logoColor=gold)](#section-8-engagement-parameters-and-next-steps)
 
 ---
 
@@ -30,14 +30,14 @@
 
 ## Table of Contents
 
-1. [Company Intelligence Brief](#section-1----company-intelligence-brief)
-2. [DARE Diagnostic](#section-2----dare-diagnostic)
-3. [CES Failure Model](#section-3----ces-failure-model)
-4. [Competitive Analysis](#section-4----competitive-analysis)
-5. [90-Day Fractional Engagement Plan](#section-5----90-day-fractional-engagement-plan)
-6. [Three Discovery Questions](#section-6----three-discovery-questions)
-7. [Prove Me Wrong Document](#section-7----prove-me-wrong-document)
-8. [Engagement Parameters & Next Steps](#section-8----engagement-parameters-and-next-steps)
+1. [Company Intelligence Brief](#section-1-company-intelligence-brief)
+2. [DARE Diagnostic](#section-2-dare-diagnostic)
+3. [CES Failure Model](#section-3-ces-failure-model)
+4. [Competitive Analysis](#section-4-competitive-analysis)
+5. [90-Day Fractional Engagement Plan](#section-5-90-day-fractional-engagement-plan)
+6. [Three Discovery Questions](#section-6-three-discovery-questions)
+7. [Prove Me Wrong Document](#section-7-prove-me-wrong-document)
+8. [Engagement Parameters & Next Steps](#section-8-engagement-parameters-and-next-steps)
 
 ---
 
