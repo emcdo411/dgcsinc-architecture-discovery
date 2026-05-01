@@ -1,5 +1,5 @@
-#  D&G Construction Services — Architecture Discovery  
-### Decision Architecture · Governance Diagnostics · AI Adoption Context
+# D&G Construction Services — Architecture Discovery  
+Decision Architecture · Governance Diagnostics · AI Adoption Context
 
 ![License](https://img.shields.io/badge/License-DACR%20v2.6-black?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Active%20Discovery-2A3580?style=for-the-badge)
@@ -9,21 +9,51 @@
 
 ---
 
-##  Overview
+<a id="table-of-contents"></a>
 
-This repository documents a **live architecture discovery engagement** focused on how decisions flow across:
+## Table of Contents
 
-- Business Development (deal origination)  
-- Estimating / Preconstruction (scope definition)  
-- Field Execution (real-world delivery conditions)  
-
-The emphasis is not on systems or tooling, but on:
-
-> **how decisions are made, owned, and executed when conditions change**
+- [Overview](#overview)
+- [Notice](#notice)
+- [Core Question](#core-question)
+- [Framework Stack](#framework-stack)
+  - [DARE — Signal Identification](#dare)
+  - [CES — Governance Integrity](#ces)
+  - [Decision Architecture](#decision-architecture)
+- [Industry Context](#industry-context)
+- [Observed Patterns](#observed-patterns)
+- [Engagement Approach](#engagement-approach)
+- [Expected Outputs](#expected-outputs)
+- [Scope Boundaries](#scope-boundaries)
+- [Intended Outcome](#intended-outcome)
+- [Guiding Principle](#guiding-principle)
+- [Attribution](#attribution)
 
 ---
 
-##  Notice
+<a id="overview"></a>
+## Overview
+
+This repository documents a **live architecture discovery engagement** focused on how decisions flow across:
+
+- Business Development  
+- Estimating / Preconstruction  
+- Field Execution  
+
+The emphasis is not on systems or tooling.
+
+It is on:
+
+```
+
+how decisions are made, owned, and executed when conditions change
+
+```
+
+---
+
+<a id="notice"></a>
+## Notice
 
 ![IP Protection](https://img.shields.io/badge/IP-Protected-critical?style=flat-square)
 ![Scope](https://img.shields.io/badge/Scope-Presentation%20Layer%20Only-informational?style=flat-square)
@@ -36,26 +66,31 @@ The underlying:
 - signal weighting  
 - architectural design methods  
 
-are proprietary to **Epoch Frameworks LLC** and governed under **DACR License v2.6**.
+are proprietary to **Epoch Frameworks LLC**  
+and governed under **DACR License v2.6**.
 
 ---
 
-##  Core Question
+<a id="core-question"></a>
+## Core Question
 
-```text
+```
+
 When something changes in the field, what happens next?
+
 ````
 
 This includes:
 
-* signal detection
-* decision ownership
-* response timing
-* outcome verification
+- signal detection  
+- decision ownership  
+- response timing  
+- outcome verification  
 
 ---
 
-##  Framework Stack (Abstracted)
+<a id="framework-stack"></a>
+## Framework Stack
 
 ![DARE](https://img.shields.io/badge/DARE-Signal%20Detection-7B8FD4?style=flat)
 ![CES](https://img.shields.io/badge/CES-Governance%20Integrity-2A3580?style=flat)
@@ -63,167 +98,168 @@ This includes:
 
 ---
 
-### DARE — Signal Identification Layer
+<a id="dare"></a>
+### DARE — Signal Identification
 
-| Dimension     | Description                                                         |
-| ------------- | ------------------------------------------------------------------- |
-| **Data**      | Divergence between planned assumptions and observed conditions      |
-| **Agility**   | Speed of response vs speed of change                                |
-| **Risk**      | Identification of inversion points where staying becomes suboptimal |
-| **Evolution** | Alignment between system design and current reality                 |
-
----
-
-### CES — Governance Assessment Layer
-
-| Dimension                | Description                                 |
-| ------------------------ | ------------------------------------------- |
-| **Criteria Validity**    | Are governing assumptions still relevant?   |
-| **Execution Capability** | Can decisions be acted upon?                |
-| **Execution Guarantee**  | Are decisions consistently carried through? |
+| Dimension | Description |
+|----------|------------|
+| Data | Gap between planned vs real conditions |
+| Agility | Speed of response vs change |
+| Risk | Points where staying becomes suboptimal |
+| Evolution | Alignment with reality |
 
 ---
 
-### Decision Architecture (Operator Layer)
+<a id="ces"></a>
+### CES — Governance Integrity
+
+| Dimension | Description |
+|----------|------------|
+| Criteria Validity | Are assumptions still correct |
+| Execution Capability | Can action actually happen |
+| Execution Guarantee | Does it consistently happen |
+
+---
+
+<a id="decision-architecture"></a>
+### Decision Architecture
 
 Focus areas:
 
-* Ownership
-* Trigger conditions
-* Action pathways
-* Verification mechanisms
+- Ownership  
+- Trigger conditions  
+- Action pathways  
+- Verification mechanisms  
 
 ---
 
-##  Industry Context
+<a id="industry-context"></a>
+## Industry Context
 
 ![Environment](https://img.shields.io/badge/Environment-High%20Variability-lightgrey?style=flat)
 ![Execution](https://img.shields.io/badge/Execution-Field%20Driven-black?style=flat)
 ![Complexity](https://img.shields.io/badge/Complexity-Multi--Stakeholder-blue?style=flat)
 
-D&G Construction Services operates in a delivery environment defined by:
+D&G operates in an environment defined by:
 
-* active-site project execution
-* variable field conditions
-* coordination across multiple stakeholders
-* time-sensitive decision requirements
+- active-site execution  
+- variable field conditions  
+- multiple stakeholders  
+- time-sensitive decision requirements  
 
-These conditions increase sensitivity to:
+This increases sensitivity to:
 
-* decision latency
-* ownership ambiguity
-* coordination breakdowns
+- decision latency  
+- ownership ambiguity  
+- coordination breakdowns  
 
 ---
 
-##  Observed Patterns (Preliminary)
+<a id="observed-patterns"></a>
+## Observed Patterns
 
 ```mermaid
 flowchart LR
     A[Sales Commitment] --> B[Estimating Assumptions]
     B --> C[Field Execution Reality]
     C --> D{Conditions Change}
-    D -->|No Clear Ownership| E[Delay / Friction]
+    D -->|No Clear Ownership| E[Delay]
     D -->|Reactive Response| F[Margin Erosion]
     D -->|Unverified Adjustment| G[Client Risk]
-```
+````
 
-Common patterns include:
+Common patterns:
 
 * misalignment between sales and operations
-* divergence between estimates and field reality
+* divergence between estimate and reality
 * reactive handling of change
-* unclear ownership of adjustments
-* limited verification of outcomes
+* unclear ownership
+* limited verification
 
 ---
 
-##  Engagement Approach
+<a id="engagement-approach"></a>
+
+## Engagement Approach
 
 ### Phase 1 — Discovery
-
-![Phase](https://img.shields.io/badge/Phase-Discovery-7B8FD4?style=flat)
 
 * stakeholder conversations
 * workflow observation
 * decision mapping
-* signal identification
-
----
 
 ### Phase 2 — Structural Mapping
-
-![Phase](https://img.shields.io/badge/Phase-Mapping-2A3580?style=flat)
 
 * breakdown identification
 * ownership gap analysis
 * trigger evaluation
 
----
-
 ### Phase 3 — Model Development
 
-![Phase](https://img.shields.io/badge/Phase-Model%20Testing-2B2B2B?style=flat)
-
-A working model is constructed to:
-
-* represent decision flow
-* identify structural gaps
-* enable stakeholder validation
+* decision flow modeling
+* structural gap validation
+* stakeholder alignment
 
 ---
 
-##  Expected Outputs
+<a id="expected-outputs"></a>
+
+## Expected Outputs
 
 ![Output](https://img.shields.io/badge/Output-Executive%20Briefs-blue?style=flat)
 ![Output](https://img.shields.io/badge/Output-Signal%20Maps-lightgrey?style=flat)
 ![Output](https://img.shields.io/badge/Output-Gap%20Analysis-black?style=flat)
 
-* Executive summaries
-* Signal maps
-* Gap analysis
-* Priority action stack
-* Decision flow visualizations
+* executive summaries
+* signal maps
+* gap analysis
+* priority action stack
+* decision flow visualizations
 
 ---
 
-##  Scope Boundaries
+<a id="scope-boundaries"></a>
 
-```diff
-- Not a software implementation
-- Not a dashboard build
-- Not a data engineering project
+## Scope Boundaries
+
+```
+Not a software implementation  
+Not a dashboard build  
+Not a data engineering project  
 ```
 
 ---
 
-##  Intended Outcome
+<a id="intended-outcome"></a>
 
-```text
+## Intended Outcome
+
+```
 Clarity before capital is deployed
 ```
 
-Ensuring:
+---
 
-* correct problems are identified
-* decision ownership is defined
-* future architecture is aligned with reality
+<a id="guiding-principle"></a>
+
+## Guiding Principle
+
+> Decisions that are not clearly owned, triggered, and verified
+> do not consistently produce outcomes.
 
 ---
 
-##  Guiding Principle
+<a id="attribution"></a>
 
-> **Decisions that are not clearly owned, triggered, and verified do not consistently produce outcomes.**
-
----
-
-##  Attribution
+## Attribution
 
 ![Author](https://img.shields.io/badge/Author-Erwin%20M.%20McDonald-2A3580?style=flat-square)
 ![Organization](https://img.shields.io/badge/Epoch%20Frameworks-LLC-black?style=flat-square)
 ![Location](https://img.shields.io/badge/Fort%20Worth-TX-7B8FD4?style=flat-square)
 
-**© McDonald (2026) · Epoch Frameworks LLC**
-**DACR License v2.6 — All rights reserved**
+McDonald (2026)
+Epoch Frameworks LLC
+
+DACR License v2.6 — All rights reserved
 
 ```
