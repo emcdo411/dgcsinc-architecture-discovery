@@ -28,20 +28,24 @@
 
 ---
 
+<a id="table-of-contents"></a>
+
 ## Table of Contents
 
-1. [Company Intelligence Brief](#section-1-company-intelligence-brief)
-2. [DARE Diagnostic](#section-2-dare-diagnostic)
-3. [CES Failure Model](#section-3-ces-failure-model)
-4. [Competitive Analysis](#section-4-competitive-analysis)
-5. [90-Day Fractional Engagement Plan](#section-5-90-day-fractional-engagement-plan)
-6. [Three Discovery Questions](#section-6-three-discovery-questions)
-7. [Prove Me Wrong Document](#section-7-prove-me-wrong-document)
-8. [Engagement Parameters & Next Steps](#section-8-engagement-parameters-and-next-steps)
+- [1. Company Intelligence Brief](#section-1-company-intelligence-brief)
+- [2. DARE Diagnostic](#section-2-dare-diagnostic)
+- [3. CES Failure Model](#section-3-ces-failure-model)
+- [4. Competitive Analysis](#section-4-competitive-analysis)
+- [5. 90-Day Fractional Engagement Plan](#section-5-90-day-fractional-engagement-plan)
+- [6. Three Discovery Questions](#section-6-three-discovery-questions)
+- [7. Prove Me Wrong Document](#section-7-prove-me-wrong-document)
+- [8. Engagement Parameters and Next Steps](#section-8-engagement-parameters-and-next-steps)
 
 ---
 
-## SECTION 1 — COMPANY INTELLIGENCE BRIEF
+<a id="section-1-company-intelligence-brief"></a>
+
+## Section 1: Company Intelligence Brief
 
 | Field | Value |
 |-------|-------|
@@ -92,7 +96,11 @@
 
 ---
 
-## SECTION 2 — DARE DIAGNOSTIC
+<p align="right"><a href="#table-of-contents">Back to top ↑</a></p>
+
+<a id="section-2-dare-diagnostic"></a>
+
+## Section 2: DARE Diagnostic
 
 [![Framework](https://img.shields.io/badge/Framework-DARE%20Diagnostic%20Lens-1C2B4A?style=for-the-badge)](#)
 [![Threshold](https://img.shields.io/badge/Structural%20Tension%20Threshold-Score%20%3E%2060-E63946?style=for-the-badge)](#)
@@ -101,7 +109,7 @@
 
 ---
 
-### 🔴 D — Data Tension Index
+### D: Data Tension Index
 
 [![Data Tension Score](https://img.shields.io/badge/Score-62%E2%80%9368-E63946?style=for-the-badge&logo=database&logoColor=white)](#)
 [![Signal Source](https://img.shields.io/badge/Signal-INFERRED--PUBLIC-6B7280?style=flat-square)](#)
@@ -115,7 +123,7 @@ The gap between what their client relationships require in terms of data precisi
 
 ---
 
-### 🟠 A — Agility Gap Index
+### A: Agility Gap Index
 
 [![Agility Gap Score](https://img.shields.io/badge/Score-58%E2%80%9365-FF6B35?style=for-the-badge&logo=zap&logoColor=white)](#)
 [![Signal Source](https://img.shields.io/badge/Signal-INFERRED--PUBLIC-6B7280?style=flat-square)](#)
@@ -129,7 +137,7 @@ Competitors adopting Procore AI, ALICE Technologies scheduling, or Autodesk Cons
 
 ---
 
-### 🔴 R — Risk Inversion Curve
+### R: Risk Inversion Curve
 
 [![Risk Inversion Score](https://img.shields.io/badge/Score-55%E2%80%9370-DC2626?style=for-the-badge&logo=alerttriangle&logoColor=white)](#)
 [![Signal Source](https://img.shields.io/badge/Signal-INFERRED--PUBLIC-6B7280?style=flat-square)](#)
@@ -145,7 +153,7 @@ Staying non-AI-enabled is no longer a neutral position — **it is an active ris
 
 ---
 
-### 🔴 E — Evolution Mismatch Index
+### E: Evolution Mismatch Index
 
 [![Evolution Mismatch Score](https://img.shields.io/badge/Score-65%E2%80%9372-B91C1C?style=for-the-badge&logo=trendingup&logoColor=white)](#)
 [![Signal Source](https://img.shields.io/badge/Signal-INFERRED--PUBLIC-6B7280?style=flat-square)](#)
@@ -176,7 +184,11 @@ National rollout clients (JCPenney, DaVita, LensCrafters) increasingly use const
 
 ---
 
-## SECTION 3 — CES FAILURE MODEL
+<p align="right"><a href="#table-of-contents">Back to top ↑</a></p>
+
+<a id="section-3-ces-failure-model"></a>
+
+## Section 3: CES Failure Model
 
 [![Framework](https://img.shields.io/badge/Framework-CES%20Governance%20Architecture%20Diagnostic-1C2B4A?style=for-the-badge)](#)
 [![Governance Floor](https://img.shields.io/badge/Governance%20Floor-9%20%2F%2015-E63946?style=for-the-badge)](#)
@@ -186,7 +198,7 @@ National rollout clients (JCPenney, DaVita, LensCrafters) increasingly use const
 
 ---
 
-### CV — Criteria Validity
+### CV: Criteria Validity
 
 [![CV Score](https://img.shields.io/badge/Score-2.5%20%2F%205-F59E0B?style=for-the-badge)](#)
 [![Signal](https://img.shields.io/badge/Signal-INFERRED--PUBLIC-6B7280?style=flat-square)](#)
@@ -195,7 +207,7 @@ DGCS's operating criteria — relationships first, quality delivery, self-perfor
 
 ---
 
-### EC — Execution Capability
+### EC: Execution Capability
 
 [![EC Score](https://img.shields.io/badge/Score-2.0%20%2F%205-EA580C?style=for-the-badge)](#)
 [![Signal](https://img.shields.io/badge/Signal-INFERRED--PUBLIC-6B7280?style=flat-square)](#)
@@ -206,7 +218,7 @@ DGCS's operating criteria — relationships first, quality delivery, self-perfor
 
 ---
 
-### EG — Execution Guarantee
+### EG: Execution Guarantee
 
 [![EG Score](https://img.shields.io/badge/Score-0.5%20%2F%205-DC2626?style=for-the-badge)](#)
 [![Signal](https://img.shields.io/badge/Signal-INFERRED--PUBLIC-6B7280?style=flat-square)](#)
@@ -217,7 +229,9 @@ No public evidence of a system of record for project intelligence, AI governance
 
 ---
 
-### 🚨 Governance Verdict
+<a id="governance-verdict"></a>
+
+### Governance Verdict
 
 [![CES Total Score](https://img.shields.io/badge/CES%20Total%20Score-5.0%20%2F%2015-DC2626?style=for-the-badge&logo=alertoctagon&logoColor=white)](#)
 [![Verdict](https://img.shields.io/badge/Verdict-STRUCTURAL%20FAILURE%20RISK-B91C1C?style=for-the-badge&logo=xoctagon&logoColor=white)](#)
@@ -233,7 +247,11 @@ No public evidence of a system of record for project intelligence, AI governance
 
 ---
 
-## SECTION 4 — COMPETITIVE ANALYSIS
+<p align="right"><a href="#table-of-contents">Back to top ↑</a></p>
+
+<a id="section-4-competitive-analysis"></a>
+
+## Section 4: Competitive Analysis
 
 [![Competitor](https://img.shields.io/badge/Primary%20Competitor-Greystone%20Construction%20Company-1C2B4A?style=for-the-badge)](#)
 [![In Operation Since](https://img.shields.io/badge/Greystone%20Founded-1987%20(38%20Years)-4A4E69?style=flat-square)](#)
@@ -276,14 +294,18 @@ No public evidence of a system of record for project intelligence, AI governance
 
 ---
 
-## SECTION 5 — 90-DAY FRACTIONAL ENGAGEMENT PLAN
+<p align="right"><a href="#table-of-contents">Back to top ↑</a></p>
+
+<a id="section-5-90-day-fractional-engagement-plan"></a>
+
+## Section 5: 90-Day Fractional Engagement Plan
 
 [![Engagement Model](https://img.shields.io/badge/Model-Fractional%20Solutions%20Architect%20%E2%80%94%20Retained%20Advisory-1C2B4A?style=for-the-badge)](#)
 [![Skill Activated](https://img.shields.io/badge/Skill-Fractional%20CXO%20Practice%20Builder%20v2.5-4A4E69?style=for-the-badge)](#)
 
 ---
 
-### Phase 1 — Days 1–30: Architecture Before Tools
+### Phase 1: Architecture Before Tools (Days 1-30)
 
 [![Phase Status](https://img.shields.io/badge/Phase%201-ARCHITECTURE%20BEFORE%20TOOLS-16213E?style=for-the-badge&logo=building&logoColor=gold)](#)
 
@@ -300,7 +322,7 @@ No public evidence of a system of record for project intelligence, AI governance
 
 ---
 
-### Phase 2 — Days 31–60: Pilot Deployment
+### Phase 2: Pilot Deployment (Days 31-60)
 
 [![Phase Status](https://img.shields.io/badge/Phase%202-PILOT%20DEPLOYMENT-22577A?style=for-the-badge&logo=flask&logoColor=white)](#)
 
@@ -314,7 +336,7 @@ No public evidence of a system of record for project intelligence, AI governance
 
 ---
 
-### Phase 3 — Days 61–90: Scale Decision
+### Phase 3: Scale Decision (Days 61-90)
 
 [![Phase Status](https://img.shields.io/badge/Phase%203-SCALE%20DECISION-2D6A4F?style=for-the-badge&logo=trendingup&logoColor=white)](#)
 [![Gate](https://img.shields.io/badge/Gate-APVL%20Validation-C8A951?style=flat-square)](#)
@@ -327,13 +349,17 @@ No public evidence of a system of record for project intelligence, AI governance
 
 ---
 
-## SECTION 6 — THREE DISCOVERY QUESTIONS
+<p align="right"><a href="#table-of-contents">Back to top ↑</a></p>
+
+<a id="section-6-three-discovery-questions"></a>
+
+## Section 6: Three Discovery Questions
 
 [![Context](https://img.shields.io/badge/For-30--Minute%20Discovery%20Call%20with%20Director%20of%20BD%20%2F%20COO-1C2B4A?style=for-the-badge)](#)
 
 ---
 
-### Question 1 — The Data Question
+### Question 1: The Data Question
 
 [![Signal](https://img.shields.io/badge/Surfaces-DARE%20D--Signal%20%7C%20System%20of%20Record%20Gap-E63946?style=flat-square)](#)
 [![Risk Level](https://img.shields.io/badge/Risk-Gap%20Answer%20%3D%20Index%2070%2B-DC2626?style=flat-square)](#)
@@ -350,7 +376,7 @@ No public evidence of a system of record for project intelligence, AI governance
 
 ---
 
-### Question 2 — The Agility Question
+### Question 2: The Agility Question
 
 [![Signal](https://img.shields.io/badge/Surfaces-DARE%20A--Signal%20%7C%20Reporting%20Speed%20Gap-FF6B35?style=flat-square)](#)
 [![Risk Level](https://img.shields.io/badge/Risk-Manual%20Compilation%20%3D%20Index%2065%2B-F59E0B?style=flat-square)](#)
@@ -367,7 +393,7 @@ No public evidence of a system of record for project intelligence, AI governance
 
 ---
 
-### Question 3 — The Governance Question
+### Question 3: The Governance Question
 
 [![Signal](https://img.shields.io/badge/Surfaces-CES%20EG%20Score%20%7C%20Technology%20Ownership%20Gap-DC2626?style=flat-square)](#)
 [![Risk Level](https://img.shields.io/badge/Risk-%22Greg%27s%20call%22%20Answer%20%3D%20CES%20EG%200.5-B91C1C?style=flat-square)](#)
@@ -384,7 +410,11 @@ No public evidence of a system of record for project intelligence, AI governance
 
 ---
 
-## SECTION 7 — PROVE ME WRONG DOCUMENT
+<p align="right"><a href="#table-of-contents">Back to top ↑</a></p>
+
+<a id="section-7-prove-me-wrong-document"></a>
+
+## Section 7: Prove Me Wrong Document
 
 [![Document Type](https://img.shields.io/badge/Type-Structural%20Hypothesis%20Battery-1C2B4A?style=for-the-badge)](#)
 [![Prepared By](https://img.shields.io/badge/Prepared%20By-Erwin%20Maurice%20McDonald-C8A951?style=for-the-badge)](#)
@@ -394,7 +424,7 @@ No public evidence of a system of record for project intelligence, AI governance
 
 ---
 
-### H1 — The Data Architecture Gap
+### H1: The Data Architecture Gap
 
 [![Hypothesis Status](https://img.shields.io/badge/Hypothesis%201-DATA%20ARCHITECTURE%20GAP-E63946?style=flat-square)](#)
 [![Evidence Basis](https://img.shields.io/badge/Evidence-INFERRED--PUBLIC-6B7280?style=flat-square)](#)
@@ -405,7 +435,7 @@ No public evidence of a system of record for project intelligence, AI governance
 
 ---
 
-### H2 — The Reporting Speed Gap
+### H2: The Reporting Speed Gap
 
 [![Hypothesis Status](https://img.shields.io/badge/Hypothesis%202-REPORTING%20SPEED%20GAP-FF6B35?style=flat-square)](#)
 [![Evidence Basis](https://img.shields.io/badge/Evidence-INFERRED--PUBLIC-6B7280?style=flat-square)](#)
@@ -416,7 +446,7 @@ No public evidence of a system of record for project intelligence, AI governance
 
 ---
 
-### H3 — The Governance Ownership Gap
+### H3: The Governance Ownership Gap
 
 [![Hypothesis Status](https://img.shields.io/badge/Hypothesis%203-GOVERNANCE%20OWNERSHIP%20GAP-F59E0B?style=flat-square)](#)
 [![Evidence Basis](https://img.shields.io/badge/Evidence-INFERRED--PUBLIC-6B7280?style=flat-square)](#)
@@ -427,7 +457,7 @@ No public evidence of a system of record for project intelligence, AI governance
 
 ---
 
-### H4 — The Competitive Window Is Closing
+### H4: The Competitive Window Is Closing
 
 [![Hypothesis Status](https://img.shields.io/badge/Hypothesis%204-COMPETITIVE%20WINDOW%20CLOSING-DC2626?style=flat-square)](#)
 [![Evidence Basis](https://img.shields.io/badge/Evidence-PUBLIC--VERIFIED%20(Industry)-16A34A?style=flat-square)](#)
@@ -443,7 +473,7 @@ No public evidence of a system of record for project intelligence, AI governance
 
 ---
 
-### H5 — The Healthcare Vertical Is Highest-Value and Highest-Risk
+### H5: The Healthcare Vertical Is Highest-Value and Highest-Risk
 
 [![Hypothesis Status](https://img.shields.io/badge/Hypothesis%205-HEALTHCARE%20VERTICAL%20RISK-B91C1C?style=flat-square)](#)
 [![Evidence Basis](https://img.shields.io/badge/Evidence-PUBLIC--VERIFIED%20%2F%20INFERRED--PUBLIC-6B7280?style=flat-square)](#)
@@ -454,7 +484,7 @@ No public evidence of a system of record for project intelligence, AI governance
 
 ---
 
-### H6 — The Estimating Process Is the Highest-ROI AI Entry Point
+### H6: The Estimating Process Is the Highest-ROI AI Entry Point
 
 [![Hypothesis Status](https://img.shields.io/badge/Hypothesis%206-ESTIMATING%20%3D%20HIGHEST%20ROI%20ENTRY-2D6A4F?style=flat-square)](#)
 [![Evidence Basis](https://img.shields.io/badge/Evidence-PUBLIC--VERIFIED%20(Industry)-16A34A?style=flat-square)](#)
@@ -469,7 +499,7 @@ No public evidence of a system of record for project intelligence, AI governance
 
 ---
 
-### H7 — The 24/7 Emergency Response Capability Is a Differentiator at Risk
+### H7: Emergency Response Is a Differentiator at Risk
 
 [![Hypothesis Status](https://img.shields.io/badge/Hypothesis%207-EMERGENCY%20RESPONSE%20AT%20RISK-EA580C?style=flat-square)](#)
 [![Evidence Basis](https://img.shields.io/badge/Evidence-PUBLIC--VERIFIED%20(Industry)-16A34A?style=flat-square)](#)
@@ -483,7 +513,7 @@ No public evidence of a system of record for project intelligence, AI governance
 
 ---
 
-### H8 — The Engagement Window Is Now, Not Later
+### H8: The Engagement Window Is Now, Not Later
 
 [![Hypothesis Status](https://img.shields.io/badge/Hypothesis%208-WINDOW%20IS%20NOW-16213E?style=flat-square&logoColor=gold)](#)
 [![Evidence Basis](https://img.shields.io/badge/Evidence-INFERRED--PUBLIC%20%2B%20PUBLIC--VERIFIED-6B7280?style=flat-square)](#)
@@ -498,7 +528,11 @@ No public evidence of a system of record for project intelligence, AI governance
 
 ---
 
-## SECTION 8 — ENGAGEMENT PARAMETERS AND NEXT STEPS
+<p align="right"><a href="#table-of-contents">Back to top ↑</a></p>
+
+<a id="section-8-engagement-parameters-and-next-steps"></a>
+
+## Section 8: Engagement Parameters and Next Steps
 
 [![Engagement Type](https://img.shields.io/badge/Type-Fractional%20Solutions%20Architect%20%E2%80%94%20Retained%20Advisory-1C2B4A?style=for-the-badge)](#)
 [![Initial Engagement](https://img.shields.io/badge/Initial%20Engagement-90--Day%20Diagnostic%20%26%20Architecture%20Build-C8A951?style=for-the-badge)](#)
@@ -531,6 +565,8 @@ No public evidence of a system of record for project intelligence, AI governance
 > The question is **who owns this decision inside DGCS.** If the answer is "no one yet," that is the first thing this engagement fixes. Every other AI decision flows from having a named owner with a defined framework and a 90-day mandate to build what the market will eventually require anyway.
 
 ---
+
+<p align="right"><a href="#table-of-contents">Back to top ↑</a></p>
 
 ## Attribution
 
